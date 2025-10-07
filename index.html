@@ -33,5 +33,56 @@
             margin-top: 0;
             color: #3a6ea5;
         }
+
+        .lokasi-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .lokasi-box label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        input {
+            flex: 1;
+            padding: 6px 8px;
+            border: 1px solid #bbb;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #3a6ea5;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 7px 14px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background-color: #2f5c8c;
+        }
+
     </style>
 </head>
+
+<body>
+    <div class="container">
+        <h2>Informasi Cuaca</h2>
+
+        
+        <div class="lokasi-box">
+            <label for="inputLokasi">Lokasi:</label>
+            <input type="text" id="inputLokasi" placeholder="Masukkan nama kota">
+            <button id="btnGet">Get</button>
+        </div>
+        <hr>
+    </div>
+</body>
