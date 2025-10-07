@@ -70,6 +70,29 @@
             background-color: #2f5c8c;
         }
 
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #3a6ea5;
+            margin-bottom: 8px;
+            margin-top: 18px;
+        }
+
+        .section p {
+            margin: 5px 0 5px 18px;
+            font-size: 14px;
+        }
+
+        .label {
+            font-weight: 600;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 15px 0;
+        }
+
     </style>
 </head>
 
@@ -84,5 +107,22 @@
             <button id="btnGet">Get</button>
         </div>
         <hr>
+        
+        <div class="section">
+            <h3>Cuaca</h3>
+            <p><span class="label">Suhu Celcius:</span> <span id="temp_c">-</span> °C</p>
+            <p><span class="label">Suhu Fahrenheit:</span> <span id="temp_f">-</span> °F</p>
+            <p><span class="label">Kelembapan:</span> <span id="humidity">-</span> %</p>
+        </div>
+
+        
+        <div class="section">
+            <h3>Lokasi</h3>
+            <p><span class="label">Negara:</span> <span id="country">-</span></p>
+            <p><span class="label">Provinsi:</span> <span id="region">-</span></p>
+            <p><span class="label">Kecamatan:</span> <span id="city">-</span></p>
+            <p><span class="label">Longitude:</span> <span id="lon">-</span></p>
+            <p><span class="label">Latitude:</span> <span id="lat">-</span></p>
+        </div>
     </div>
 </body>
