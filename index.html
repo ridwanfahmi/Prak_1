@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplikasi Cuaca</title>
-
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -92,22 +90,19 @@
             border-top: 1px solid #ccc;
             margin: 15px 0;
         }
-
     </style>
 </head>
-
 <body>
     <div class="container">
         <h2>Informasi Cuaca</h2>
 
-        
         <div class="lokasi-box">
             <label for="inputLokasi">Lokasi:</label>
             <input type="text" id="inputLokasi" placeholder="Masukkan nama kota">
             <button id="btnGet">Get</button>
         </div>
         <hr>
-        
+
         <div class="section">
             <h3>Cuaca</h3>
             <p><span class="label">Suhu Celcius:</span> <span id="temp_c">-</span> °C</p>
@@ -115,12 +110,11 @@
             <p><span class="label">Kelembapan:</span> <span id="humidity">-</span> %</p>
         </div>
 
-        
         <div class="section">
             <h3>Lokasi</h3>
             <p><span class="label">Negara:</span> <span id="country">-</span></p>
             <p><span class="label">Provinsi:</span> <span id="region">-</span></p>
-            <p><span class="label">Kecamatan:</span> <span id="city">-</span></p>
+            <p><span class="label">Kota:</span> <span id="city">-</span></p>
             <p><span class="label">Longitude:</span> <span id="lon">-</span></p>
             <p><span class="label">Latitude:</span> <span id="lat">-</span></p>
         </div>
@@ -129,13 +123,11 @@
     <script>
         $("#btnGet").click(function() {
             const lokasi = $("#inputLokasi").val().trim();
-
             if (lokasi === "") {
                 alert("Masukkan nama kota terlebih dahulu!");
                 return;
             }
 
-            
             const apiKey = "811f77a27d104243bda65513250710";
             const urlapi = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lokasi}&aqi=no`;
 
@@ -143,7 +135,6 @@
                 url: urlapi,
                 method: "GET",
                 success: function(data) {
-                    
                     $("#temp_c").text(data.current.temp_c);
                     $("#temp_f").text(data.current.temp_f);
                     $("#humidity").text(data.current.humidity);
@@ -155,10 +146,10 @@
                     $("#lat").text(data.location.lat);
                 },
                 error: function() {
-                    // Commit 6: Penanganan error API
                     alert("Lokasi tidak ditemukan atau terjadi kesalahan!");
                 }
             });
         });
     </script>
 </body>
+</html>
