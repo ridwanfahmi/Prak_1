@@ -125,4 +125,34 @@
             <p><span class="label">Latitude:</span> <span id="lat">-</span></p>
         </div>
     </div>
+
+    <script>
+        $("#btnGet").click(function() {
+            const lokasi = $("#inputLokasi").val().trim();
+
+            
+
+            
+            const apiKey = "811f77a27d104243bda65513250710";
+            const urlapi = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lokasi}&aqi=no`;
+
+            $.ajax({
+                url: urlapi,
+                method: "GET",
+                success: function(data) {
+                    
+                    $("#temp_c").text(data.current.temp_c);
+                    $("#temp_f").text(data.current.temp_f);
+                    $("#humidity").text(data.current.humidity);
+
+                    $("#country").text(data.location.country);
+                    $("#region").text(data.location.region);
+                    $("#city").text(data.location.name);
+                    $("#lon").text(data.location.lon);
+                    $("#lat").text(data.location.lat);
+                },
+                
+            });
+        });
+    </script>
 </body>
