@@ -130,7 +130,10 @@
         $("#btnGet").click(function() {
             const lokasi = $("#inputLokasi").val().trim();
 
-            
+            if (lokasi === "") {
+                alert("Masukkan nama kota terlebih dahulu!");
+                return;
+            }
 
             
             const apiKey = "811f77a27d104243bda65513250710";
@@ -151,7 +154,10 @@
                     $("#lon").text(data.location.lon);
                     $("#lat").text(data.location.lat);
                 },
-                
+                error: function() {
+                    // Commit 6: Penanganan error API
+                    alert("Lokasi tidak ditemukan atau terjadi kesalahan!");
+                }
             });
         });
     </script>
